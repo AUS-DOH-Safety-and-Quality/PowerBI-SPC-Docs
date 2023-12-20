@@ -36,6 +36,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Update site url
+        run:
+          sed -i 's/PowerBI-SPC/PowerBI-SPC-Docs/g' ${{ github.workspace }}/docs/_config.yml
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
