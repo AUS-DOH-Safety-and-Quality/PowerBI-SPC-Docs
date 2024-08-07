@@ -56,7 +56,7 @@ The table will then automatically update to display the icons for each group:
 
 A number of settings are available to customise the appearance of the table, including font size, font colour, background colour, and more. These settings can be found under the `Summary Table` tab, with a separate section for each type of setting:
 
-![TableAesthetics](images\TableAesthetics.png)
+![TableAestheticsMenu](images\TableAestheticsMenu.png)
 
 ### Conditional Formatting
 
