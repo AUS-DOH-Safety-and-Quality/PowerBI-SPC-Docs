@@ -9,7 +9,7 @@ name: Deploy Jekyll site to Pages
 on:
   push:
     branches: ["main"]
-    include:
+    paths:
       - docs/** # Push events to docs folder
 
   # Allows you to run this workflow manually from the Actions tab
@@ -35,10 +35,10 @@ jobs:
         working-directory: docs
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Update site url
         run:
-          sed -i 's/PowerBI-SPC/PowerBI-SPC-Docs/g' ${{ github.workspace }}/docs/_config.yml
+          sed -i 's/PowerBI-Funnels/PowerBI-Funnels-Docs/g' ${{ github.workspace }}/docs/_config.yml
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -48,7 +48,7 @@ jobs:
           working-directory: '${{ github.workspace }}/docs'
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v5
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
@@ -56,7 +56,7 @@ jobs:
           JEKYLL_ENV: production
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v4
         with:
           path: "docs/_site/"
 
@@ -70,4 +70,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
