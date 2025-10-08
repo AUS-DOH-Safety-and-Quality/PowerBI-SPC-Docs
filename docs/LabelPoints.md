@@ -7,7 +7,7 @@ layout: page
 
 In some situations, it may be desirable to label particular points on the SPC chart. For example, if a point is identified as an outlier, it may be useful to label that point with additional information (e.g. the value of the point, or the reason for the outlier).
 
-The SPC visual provides a simple way to label points on the chart, using the `Value Labels` input field. By providing a column in the data that contains the labels for each point, the labels will be displayed on the chart. To label only particular points, simply provide a blank value or empty string for points that should not be labelled.
+The SPC visual provides a simple way to label points on the chart, using the `Value Labels` input field. To label only particular points, simply provide a blank value or empty string for points that should not be labelled.
 
 For example, consider the following columns of data:
 
